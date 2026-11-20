@@ -23,25 +23,32 @@
   </div></header>
   <main>
 <h1>Datenschutz</h1>
-<p class="updated">Stand: 17. Oktober 2026</p>
+<p class="updated">Stand: 20. November 2026</p>
 
 <p class="lead">Kurz: Säckli hat kein Konto, keine Werbung und keine Analyse. Kamera- und Tonaufnahmen
-werden auf deinem iPhone verarbeitet und bleiben dort. Die App verbindet sich nur dann mit dem Internet,
-wenn du selbst eine Runde sendest.</p>
+werden auf deinem Handy verarbeitet und bleiben dort. Die App verbindet sich nur dann mit dem Internet,
+wenn du selbst eine Runde sendest oder ein Turnier mit Online-Abgleich spielst; die Turnierdaten sind
+dabei so verschlüsselt, dass wir sie nicht lesen können.</p>
 
 <h2>Verantwortlich</h2>
 <p>Marco Meyer, Schweiz. Kontakt: <a href="mailto:feedback@saeckli.ch">feedback@saeckli.ch</a></p>
 
-<h2>Was die App auf deinem iPhone verarbeitet</h2>
+<h2>Was die App auf deinem Handy verarbeitet</h2>
+<p>Säckli gibt es für iPhone und Android. Auf Android zählt die App vorerst nur von Hand; die Kamera braucht sie dort nur zum Lesen von QR-Codes.</p>
 <ul>
   <li><strong>Kamera:</strong> um die Säckli auf dem Brett zu erkennen. Die Erkennung läuft auf dem iPhone.</li>
   <li><strong>Mikrofon (freiwillig):</strong> um zu hören, wenn ein Säckli aufs Brett fällt. Die Geräusche werden auf dem iPhone eingeordnet, zum Beispiel um Sprechen von einem Aufprall zu unterscheiden.</li>
   <li><strong>Aufnahmen:</strong> jede Runde wird als Video mit Ton auf dem iPhone gespeichert, zusammen mit den Erkennungsdaten, dem Resultat und deinen Korrekturen. Videos werden nach 7 Tagen gelöscht, ausser Runden, die du senden willst; das lässt sich in den Einstellungen ändern.</li>
   <li><strong>Spieldaten:</strong> Teamnamen, Punkte, Trainingsstatistik und Einstellungen.</li>
+  <li><strong>Spielerprofile und Turniere:</strong> die Namen der Spielenden, ihre Resultate und
+  Statistik, die Turniere mit Paarungen und Rangliste. Ein Profil gibst du per QR-Code weiter.</li>
+  <li><strong>Bluetooth:</strong> verbundene Spiele und Turniere tauschen Spielstände direkt zwischen den
+  Handys in der Nähe aus, ohne Server.</li>
   <li><strong>Fotos:</strong> die App fragt nur, ob sie ein Highlight-Video in deine Fotos <em>hinzufügen</em> darf, und nur wenn du es sichern willst. Sie liest deine Fotos nicht.</li>
 </ul>
-<p>Diese Daten bleiben in der App auf deinem iPhone. Wenn du die App löschst, sind sie weg. In iPhone-
-oder iCloud-Backups können sie enthalten sein, wie bei anderen Apps.</p>
+<p>Diese Daten bleiben in der App auf deinem Handy (und, bei verbundenen Spielen und Turnieren, auf den
+Handys der Mitspielenden). Wenn du die App löschst, sind sie weg. In Backups des Handys können sie
+enthalten sein, wie bei anderen Apps.</p>
 
 <h2>Wenn du eine Runde sendest</h2>
 <p>Nur wenn du es selbst auslöst (<em>Einstellungen › Aufnahmen</em>), packt die App die gewählten
@@ -64,23 +71,45 @@ Erkennungsmodelle zu trainieren. Wir geben sie nicht weiter und veröffentlichen
 löschen wir sie.</p>
 <p class="note">Die Videos zeigen die Spielenden und haben Ton. Frag die Leute im Bild, bevor du sendest.</p>
 
-<h2>Beta über TestFlight</h2>
+<h2>Online-Abgleich von Turnieren</h2>
+<p>Ein Turnier kann seine Daten über einen Server abgleichen, damit Resultate ohne Bluetooth bei allen
+ankommen. Das wählt, wer das Turnier einrichtet (<em>Neues Turnier › Online-Abgleich</em>). Bei einer
+Klubmeisterschaft ist er voreingestellt, weil sich dort nicht alle treffen; er lässt sich beim
+Einrichten ausschalten.</p>
+<ul>
+  <li><strong>Was:</strong> die Einträge des Turniers (Spielende, Paarungen, Resultate). Sie werden auf
+  dem Handy Ende-zu-Ende verschlüsselt. Der Schlüssel steckt im QR-Code und im Einladungslink des
+  Turniers und kommt nie zum Server: wir können die Inhalte nicht lesen, auch keine Namen.</li>
+  <li><strong>Wo:</strong> in einer Datenbank bei Cloudflare (Cloudflare D1, Standort Europäische
+  Union), unter go.saeckli.com. Der Server sieht nur zufällige Kennungen sowie Anzahl, Grösse und Zeit
+  der Einträge. Cloudflare sieht technisch deine IP-Adresse; sie dient nur dazu, zu viele Anfragen zu
+  begrenzen, und wir speichern sie nicht.</li>
+  <li><strong>Wie lange:</strong> ein Turnier wird gelöscht, wenn 400 Tage lang niemand darauf
+  zugreift; auf Anfrage früher.</li>
+  <li><strong>Einladungslinks</strong> (go.saeckli.com/…): was das Turnier braucht, steht hinter dem
+  «#» im Link. Diesen Teil sendet ein Browser nicht an den Server; der Link öffnet die App.</li>
+</ul>
+
+<h2>Beta über TestFlight und als Android-Datei</h2>
 <p>Während der Beta wird Säckli über Apples TestFlight verteilt. Apple gibt uns dabei deinen Namen und
 deine E-Mail-Adresse, wenn wir dich per E-Mail eingeladen haben, sowie Absturzberichte, Feedback, das
 du in TestFlight sendest, und technische Angaben wie iPhone-Modell und iOS-Version. Dafür gilt
 <a href="https://www.apple.com/legal/privacy/data/de/testflight/">Apples Datenschutzhinweis zu TestFlight</a>.</p>
+<p>Die Android-Beta lädst du als Datei über einen Link bei Cloudflare herunter (upload.saeckli.com). Dabei
+sieht Cloudflare technisch deine IP-Adresse; wir speichern sie nicht und erhalten keine weiteren Angaben.</p>
 
 <h2>Was es nicht gibt</h2>
 <ul>
   <li>kein Konto und kein Login,</li>
   <li>keine Werbung und kein Tracking,</li>
   <li>keine Analyse- oder Statistikdienste,</li>
-  <li>keine Verbindung zu einem Server, ausser beim Hochladen von Runden, die du sendest.</li>
+  <li>keine Verbindung zu einem Server, ausser beim Hochladen von Runden, die du sendest, und beim
+  Online-Abgleich von Turnieren, für die er eingeschaltet ist.</li>
 </ul>
 
 <h2>Spätere freiwillige Funktionen</h2>
-<p>Denkbar sind später zum Beispiel anonyme Nutzungsstatistik oder weitere Online-Funktionen. Solche Funktionen wären freiwillig und ausgeschaltet, bis du sie einschaltest. Wir
-passen diese Erklärung an, bevor eine solche Funktion in die App kommt.</p>
+<p>Denkbar sind später zum Beispiel anonyme Nutzungsstatistik oder weitere Online-Funktionen. Solche
+Funktionen wären freiwillig. Wir passen diese Erklärung an, bevor eine solche Funktion in die App kommt.</p>
 
 <h2>Deine Rechte</h2>
 <p>Du kannst Auskunft über die Daten verlangen, die du uns gesendet hast, und ihre Löschung.
